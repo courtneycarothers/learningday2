@@ -75,4 +75,13 @@ leaflet(locations) %>%
   addTiles() %>% 
   addMarkers(~ Longitude, ~ Latitude, popup = ~ Location, icon = markerIcon)
 ```
+```{r}
+locs <- locations %>% mutate(Longitude = abs(Longitude) * -1)
+```
+
+```{r}
+leaflet(locs) %>% 
+  addTiles() %>% 
+  addMarkers(~ Longitude, ~ Latitude, popup = ~ Location, icon = markerIcon)
+```
 
